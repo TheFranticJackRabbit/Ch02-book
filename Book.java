@@ -34,4 +34,10 @@ public class Book
     return author;    
 }
 
+public String getBook()
+{
+    return title;
+    
+}
+
 }
