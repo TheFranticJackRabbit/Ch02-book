@@ -93,7 +93,7 @@ public void setref(String ref)
 
 public void printref()
 {
-    if (refNumber.length() == 3){
+    if (refNumber.length() >= 3){
         System.out.println ("Reference number:" + refNumber);
     }
     else{
