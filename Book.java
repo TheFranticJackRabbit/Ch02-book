@@ -11,20 +11,27 @@ public class Book
     // The fields.
     private String author;
     private String title;
-    private String page;
+    private String pages;
     private String refNumber;
+     int borrowed; 
+    public boolean courseText;
 
 
     /**
      * Set the author and title fields when this object
      * is constructed.
      */
-    public Book(String bookAuthor, String bookTitle, String bookpage, String ref)
+    public Book(String bookAuthor, String bookTitle, String bookPages,boolean isCourseText)
+
     {
         author = bookAuthor;
         title = bookTitle;
-        page= bookpage;
-        refNumber = ref;
+        refNumber = "";
+        pages = bookPages;
+        borrowed = 0;
+        courseText = isCourseText;
+
+
        
         
     }
@@ -55,50 +62,64 @@ public String getBook()
 }
 public void printTitle()
 {
-    System.out.println("Book Title" + title);
+    System.out.println("Book Title:" + title);
 }
 public String getPages()
-{
-    return page;
-}
+    {
+        return pages;
+    }
 public void printPages()
 {
-    System.out.println("pages:" + page);
+    System.out.println("Pages:" + pages);
 }
+
 public void printDetails()
 {
     System.out.println("Author:" + author);
     System.out.println("Title:" + title);
-    System.out.println("Pages:" + page);
-    
-}
-//**kind of works/kinda doesnt to get the refnumber
-public String getref()
-{
-    refNumber = ""; 
-    return refNumber;
-
-
-}
-public void setref(String ref)
-{ 
-    if(ref.length() >= 3){
-     refNumber = ref;
+    System.out.println("Pages:" + pages);
+    if(refNumber.length() > 0) {
+            System.out.println("Reference number: " + refNumber);
+        }
+        else {
+            System.out.println("Reference number: ZZZ");
+        }
+        System.out.println("Borrowed: " + borrowed + " times");
     }
-    
-    else if (ref.length() != 3){
-        System.out.println("Error: The Reference must be at least " + " Three charaters long");
-}
- }
 
-public void printref()
+
+//**kind of works/kinda doesnt to get the refnumber
+public void setRefNumber(String ref)
 {
-    if (refNumber.length() >= 3){
-        System.out.println ("Reference number:" + refNumber);
+    if (ref.length() >=3) {
+       refNumber = ref;
+ 
     }
     else{
-        System.out.println("Reference number:" + refNumber);
+        System.out.println("Error: the reference number must be at least "
+                               + "three characters long.");
+
     }
     }
+    
+    public String getRefNumber()
+    {
+        return refNumber;
+
+}
+  public void borrow()
+    {
+        borrowed = borrowed + 1;
+
+}
+ public int getBorrowed()
+    {
+        return borrowed;
+    }
+ public boolean isCourseText()
+    {
+        return courseText;
+    }
+
 
 }
