@@ -86,18 +86,18 @@ public void setref(String ref)
      refNumber = ref;
     }
     
-    else{
+    else if (ref.length() != 3){
         System.out.println("Error: The Reference must be at least " + " Three charaters long");
 }
  }
 
 public void printref()
 {
-    if (refNumber.length() > 0){
+    if (refNumber.length() >= 3){
         System.out.println ("Reference number:" + refNumber);
     }
     else{
-        System.out.println("Reference number: ZZZ");
+        System.out.println("Reference number:" + refNumber);
     }
     }
 
