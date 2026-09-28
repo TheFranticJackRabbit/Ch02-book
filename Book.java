@@ -12,16 +12,19 @@ public class Book
     private String author;
     private String title;
     private String page;
+    private String refNumber;
+
 
     /**
      * Set the author and title fields when this object
      * is constructed.
      */
-    public Book(String bookAuthor, String bookTitle, String bookpage)
+    public Book(String bookAuthor, String bookTitle, String bookpage, String ref)
     {
         author = bookAuthor;
         title = bookTitle;
         page= bookpage;
+        refNumber = ref;
        
         
     }
@@ -67,5 +70,35 @@ public void printDetails()
     System.out.println("Author:" + author);
     System.out.println("Title:" + title);
     System.out.println("Pages:" + page);
+    
 }
+
+public String getref()
+{
+    refNumber = ""; 
+    return refNumber;
+
+
+}
+public void setref(String ref)
+{ 
+    if(ref.length() >= 3){
+     refNumber = ref;
+    }
+    
+    else{
+        System.out.println("Error: The Reference must be at least " + " Three charaters long");
+}
+ }
+
+public void printref()
+{
+    if (refNumber.length() > 0){
+        System.out.println ("Reference number:" + refNumber);
+    }
+    else{
+        System.out.println("Reference number: ZZZ");
+    }
+    }
+
 }
