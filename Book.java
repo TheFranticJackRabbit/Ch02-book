@@ -29,7 +29,7 @@ public class Book
         
     }
 
-    
+    //**get all info from author to title 
     /**
      * getAuthor
      * @return name of author
@@ -72,7 +72,7 @@ public void printDetails()
     System.out.println("Pages:" + page);
     
 }
-
+//**kind of works/kinda doesnt to get the refnumber
 public String getref()
 {
     refNumber = ""; 
