@@ -113,7 +113,7 @@ public int getBorrowed()
     {
         return borrowed;
     }
-    private void borrow()   {
+    public void borrow()   {
         borrowed = borrowed + 1;
         
     }
