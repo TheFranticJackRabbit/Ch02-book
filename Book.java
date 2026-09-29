@@ -14,19 +14,20 @@ public class Book
     private int page;
     private String refNumber;
     private int borrowed;
-    
+    private boolean coursetext;
 
     /**
      * Set the author and title fields when this object
      * is constructed.
      */
-    public Book(String bookAuthor, String bookTitle, int bookpage)
+    public Book(String bookAuthor, String bookTitle, int bookpage,boolean isCourseText)
     {
         author = bookAuthor;
         title = bookTitle;
         page= bookpage;
         refNumber ="";
         borrowed = 0;
+        coursetext = isCourseText;
 
         
     }
@@ -95,7 +96,7 @@ public void setref(String ref)
      refNumber = ref;
     }
     
-    else if (ref.length() >= 3){
+    else{
         System.out.println("Error: The Reference must be at least " + " Three charaters long");
 }
  }
@@ -118,4 +119,8 @@ public int getBorrowed()
         
     }
     
+     public boolean isCourseText(){
+        return coursetext;
+    }
+
 }
